@@ -40,6 +40,13 @@ pipeline {
             }
         }
 
+        stage('Migrate DB') {
+            steps {
+                sh 'docker exec django-app python manage.py migrate'
+            }
+        }
+
+
         stage('Wait & Health Check') {
             steps {
                 script {
