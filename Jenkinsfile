@@ -46,6 +46,11 @@ pipeline {
             }
         }
 
+        stage('Collect Static Files') {
+            steps {
+                sh 'docker exec django-app python manage.py collectstatic --noinput'
+            }
+        }
 
         stage('Wait & Health Check') {
             steps {
