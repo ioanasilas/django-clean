@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyerahn Kim - Form</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="hero">
+        <h1>Let's talk!</h1>
+
+    </header>
+    <nav>
+        <div class="nav">
+            <div class="nav-element"><a href="{% url 'index' %}">BLOG</a></div>
+            <div class="nav-element"><a href="{% url 'about' %}">ABOUT</a></div>
+            <div class="nav-element nav-selected"><a href="{% url 'form' %}">FORM</a></div>
+            <div class="nav-element"><a href="{% url 'gallery' %}">GALLERY</a></div>
+        </div>
+    </nav>
+    <div id="magic-ball"></div>
+    <div class="paper" id="form-paper">
+        <form action="{% url 'index' %}">
+            <p class="each-question animate animate-slide">
+                <label>Salutation</label><br>
+
+                <input type="radio">Ms.
+                <input type="radio">Mr.
+                <input type="radio">Undefined
+            </p>
+            <p class="each-question animate animate-slide">
+                <label>What is your name?</label><br>
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+            </p>
+            <p class="each-question animate animate-slide">
+                <label>What do you do?</label><br>
+                <select name="profession" id="profession">
+                    <option id="student">Student</option>
+                    <option id="self_employed">Self-Employed</option>
+                    <option id="employed">Employed</option>
+                    <option id="job-searching">Job-Searching</option>
+                </select>
+            </p>
+            <p class="each-question animate animate-slide">
+                <label>When were you born?</label><br>
+                <input type="date">
+            </p>
+            <p class="each-question animate animate-slide">
+                <label>Where are you from?</label><br>
+                <select name="countries" id="countries">
+                    <optgroup label="Europe">
+                        <option value="germany">Germany</option>
+                        <option value="romania">Romania</option>
+                        <option value="spain">Spain</option>
+                        <option value="portugal">Portugal</option>
+                        <option value="france">France</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                        <option value="south_korea">South Korea</option>
+                        <option value="north_korea">North Korea</option>
+                        <option value="china">China</option>
+                        <option value="india">India</option>
+                        <option value="japan">Japan</option>
+                    </optgroup>
+                    <optgroup label="America">
+                        <option value="cuba">Cuba</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                    </optgroup>
+                    <option value="somewhere_else">Somewhere Else</option>
+                </select>
+            </p>
+            <p class="each-question animate animate-slide">
+                <label for="message">How would you describe yourself?</label><br>
+                <input type="text" id="message" name="description" placeholder="Describe Yourself.">
+
+            </p>
+            <p class="each-question  animate animate-slide">
+                <label>What sport are you interested in?</label><br>
+                <input type="checkbox" name="running" id="running">
+                <label for="running">Running</label><br>
+                <input type="checkbox" name="cycling" id="cycling">
+                <label for="cycling">Cycling</label><br>
+                <input type="checkbox" name="swimming" id="swimming">
+                <label for="swimming">Swimming</label><br>
+                <input type="checkbox" name="badminton" id="badminton">
+                <label for="badminton">Badminton</label><br>
+
+
+            </p>
+
+            <p class="each_question">
+                <label for="file">Upload Your Image</label><br>
+                <input id="file" name="file" type="file">
+                <button>Upload</button>
+            </p>
+
+            <p>
+                <input id="submit-button" type="submit" value="Submit">
+            </p>
+        </form>
+    </div>
+    <footer>
+        <p>Author: Hyerahn Kim <br> <a href="mailto:hyerahn.kim10@e-uvt.ro">hyerahn.kim10@e-uvt.ro</a>
+            <br> &#169; Copyright 2024 by Hyerahn Kim. All Rights Reserved.
+        </p>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+#scrollToTopBtn {
+    margin-bottom: 5%;
+    color: #f4f1de;
+    font-family: "Fira Code", monospace;
+    background-color: #3d405b;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    display: none;
+    right: 30px;
+
+    z-index: 99;
+
+    border: none;
+
+    outline: none;
+
+
+    cursor: pointer;
+
+    padding: 5px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+}

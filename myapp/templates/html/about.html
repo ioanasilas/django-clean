@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Project - YIHM</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="hero">
+        <h1>Who we are</h1>
+        <nav>
+            <div class="nav">
+                <div class="nav-element"><a href="{% url 'index' %}">PROJECT</a></div>
+                <div class="nav-element nav-selected"><a href="{% url 'about' %}">ABOUT</a></div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="section" id="life">
+        <h2>About Us</h2>
+        <p>IWe are a team of Computer Science students from the West University of Timișoara, brought together by curiosity, code, and a shared passion for building useful tech. Our project, developed in collaboration with IBM mentors, gave us the chance to apply DevOps concepts and modern tools like Jenkins, Podman, and GitHub in a real-world CI/CD setup.</p>
+    </div>
+    <div class="section" id="education">
+        <h2>Meet the Team</h2>
+
+        <ul class="animate slideInLeft">
+            <li>
+                Ioana Silas
+            </li>
+            <li>
+                Ivan Cinarli
+            </li>
+            <li>
+                Yossef Ghobashi
+            </li>
+            <li>
+                Heran Kim
+            </li>
+        </ul>
+        <p>Our team brings together a diverse group of Computer Science students, each with a unique background and skill set. From web development and legal tech to game design and cybersecurity, we combine practical experience with academic curiosity. What connects us is a shared drive to learn, build, and explore modern technologies—from DevOps pipelines to cloud orchestration and real-time systems.</p>
+
+    </div>
+    <div class="section" id="work">
+        <h2> What Unites Us</h2>
+        <p>Though we come from different backgrounds and countries, we’re united by a love of learning, building, and pushing boundaries. This project allowed us to explore how code travels from developer to user — automated, tested, and ready for deployment — and gave us a solid foundation in real-world DevOps.</p>
+
+    </div>
+
+    <div class="flex" id="bts">
+        <div class="flex"><img src="{% static 'images/3.jpg' %}" alt="image of samsung event">
+        </div>
+        <div class="flex"><img src="{% static 'images/4.jpg' %}" alt="image of samsung event">
+        </div>
+        <div class="flex"><img src="{% static 'images/5.jpg' %}" alt="image of samsung event">
+        </div>
+        <div class="flex"><img src="{% static 'images/6.jpg' %}" alt="image of samsung event">
+        </div>
+    </div>
+    </div>
+    <footer>
+        <p>Author: YIHM <br> <a href="mailto:hyerahn.kim10@e-uvt.ro">hyerahn.kim10@e-uvt.ro</a>
+            <br> &#169; Copyright 2025. All Rights Reserved.
+        </p>
+    </footer>
+</body>
+
+</html>

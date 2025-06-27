@@ -1,0 +1,22 @@
+#searchContainer {
+    font-family: "Fira Code", monospace;
+    border-color: #e07a5f;
+
+    padding: 5px 45px;
+    margin-bottom: 20px;
+}
+
+#searchButton {
+    background-color: #3d405b;
+    text-align: center;
+    color: antiquewhite;
+
+    cursor: pointer;
+
+    padding: 5px;
+
+
+
+    font-size: 13px;
+
+}

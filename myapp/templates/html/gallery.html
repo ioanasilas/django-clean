@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyerahn Kim - Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <h1 class="animate slide" id="hero">Gallery</h1>
+    </header>
+    <nav>
+        <div class="nav">
+            <div class="nav-element"><a href="{% url 'index' %}">BLOG</a></div>
+            <div class="nav-element"><a href="{% url 'about' %}">ABOUT</a></div>
+            <div class="nav-element"><a href="{% url 'form' %}">FORM</a></div>
+            <div class="nav-element nav-selected"><a href="{% url 'gallery' %}">GALLERY</a></div>
+        </div>
+    </nav>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="{% static 'images/sample1.jpg' %}" alt="Sample Image 1">
+            <p>Sample Image 1</p>
+        </div>
+        <div class="gallery-item">
+            <img src="{% static 'images/sample2.jpg' %}" alt="Sample Image 2">
+            <p>Sample Image 2</p>
+        </div>
+        <div class="gallery-item">
+            <img src="{% static 'images/sample3.jpg' %}" alt="Sample Image 3">
+            <p>Sample Image 3</p>
+        </div>
+        <!-- Add more gallery items as needed -->
+    </div>
+    <footer>
+        <p>Author: Hyerahn Kim <br> <a href="mailto:hyerahn.kim10@e-uvt.ro">hyerahn.kim10@e-uvt.ro</a>
+            <br> &#169; Copyright 2024 by Hyerahn Kim. All Rights Reserved.
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Project with IBM</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_BackToTop.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_SearchPosts.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="hero">
+        <h1 class="animate slide">Team Project IBM</h1>
+        <nav>
+            <div class="nav">
+                <div class="nav-element nav-selected"><a href="{% url 'index' %}">PROJECT</a></div>
+                <div class="nav-element"><a href="{% url 'about' %}">ABOUT</a></div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="Search anything.">
+        <button id="searchButton" onclick="searchPosts()">Search</button>
+    </div>
+
+    <div>
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">Back to
+            Top </button>
+    </div>
+
+    {% block content %}
+    {% for post in posts %}
+
+
+    <article>
+        <article class="blog animate fadeup">
+             <h2>Project Overview</h2>
+          <p>
+            As part of our academic journey and with the support of an IBM-led mentorship program, we developed a fully functional
+            CI/CD (Continuous Integration / Continuous Delivery) pipeline. The goal was to simulate a real-world DevOps workflow
+            using modern tools and technologies that professional development teams rely on today.
+          </p>
+          <p>
+            The pipeline was deployed in a virtual environment running <strong>Rocky Linux 9</strong> and relied on
+            <strong>Jenkins</strong> for automation, <strong>Podman</strong> for containerization, and <strong>GitHub</strong>
+            as the version control platform. We also used <strong>Docker Hub</strong> as a public registry to store our container images.
+          </p>
+        </article>
+
+        <article>
+        <article class="blog animate fadeup">
+            <h2>What We Built</h2>
+            <div class="flex"><img src="{% static 'images/7.jpg' %}" alt="image of samsung event">
+        </div>
+          <ul>
+            <li>Configured a Jenkins pipeline to automatically <strong>clone the project repo from GitHub</strong>.</li>
+            <li>Built the container image using <strong>Podman</strong>, tagged it appropriately, and ran it for testing.</li>
+            <li>Automatically <strong>stopped and deleted the test container</strong> after validation.</li>
+            <li>Successfully pushed the final image to <strong>Docker Hub</strong> using Podman.</li>
+            <li>Added a custom <strong>API endpoint returning JSON</strong> with project and team info to show meaningful changes to the app.</li>
+            <li>Tested the container independently by pulling it from Docker Hub and running it locally with Podman.</li>
+          </ul>
+            <p>
+                Beyond technical skills, we improved our collaboration and communication through version control, regular sync-ups, and
+                problem-solving together as a team.
+            </p>
+        </article>
+
+            <article>
+        <article class="blog animate fadeup">
+            <h2>Technologies Used</h2>
+            <div class="flex"><img src="{% static 'images/2.png' %}" alt="image of samsung event">
+        </div>
+            <div class="flex"><img src="{% static 'images/podman.png' %}" alt="image of samsung event">
+        </div>
+          <ul>
+            <li><strong>Jenkins</strong> – for automating the CI/CD pipeline</li>
+            <li><strong>Podman</strong> – for building, running, and managing containers without needing root access</li>
+            <li><strong>GitHub</strong> – as the source code repository and version control platform</li>
+            <li><strong>Docker Hub</strong> – for hosting and distributing container images</li>
+            <li><strong>Rocky Linux 9</strong> – as the base OS for our development environment</li>
+          </ul>
+        </article>
+
+
+        <article>
+        <article class="blog animate fadeup">
+            <h2>What We Learned</h2>
+            <p>This project gave us hands-on experience with real-world DevOps tools and workflows. We learned how to:
+            </p>
+            <ul>
+                <li>Automate code integration, testing, and deployment using Jenkins</li>
+                <li>Work with containerized applications using Podman</li>
+                <li>Manage repositories and understand CI/CD triggers through GitHub</li>
+                <li>Push and pull container images between local environments and remote registries</li>
+                <li>Troubleshoot build and deployment issues in a Linux-based environment</li>
+            </ul>
+            <p>
+                Beyond technical skills, we improved our collaboration and communication through version control, regular sync-ups, and
+                problem-solving together as a team.
+            </p>
+        </article>
+
+
+        {% endfor %}
+        {% endblock %}
+        <div class="blog animate fadeup">
+            <h2>Reviews</h2>
+            <ul>
+                {% for review in reviews %}
+                <li>
+                    <p><strong>{{ review.email }}</strong> ({{ review.date }})</p>
+                    <p>Rating: {{ review.rating }}</p>
+                    <p>{{ review.comment }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'submit_review' %}">Leave a Review</a>
+        </div>
+
+
+        <footer>
+            <p>Author: YIHM <br> <a href="mailto:hyerahn.kim10@e-uvt.ro">hyerahn.kim10@e-uvt.ro</a>
+                <br> &#169; Copyright 2025 by YIHM. All Rights Reserved.
+            </p>
+        </footer>
+        <script src="{% static 'js/index_BackToTop.js' %}"></script>
+        <script src="{% static 'js/index_SearchPosts.js' %}"></script>
+</body>
+
+</html>
