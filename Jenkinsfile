@@ -40,18 +40,8 @@ pipeline {
             }
         }
 
-        stage('Migrate DB') {
-            steps {
-                sh 'docker exec django-app python manage.py migrate'
-            }
-        }
-
-        stage('Collect Static Files') {
-            steps {
-                sh 'docker exec django-app python manage.py collectstatic --noinput'
-            }
-        }
-
+        // no more migrate step since we have db
+        
         stage('Wait & Health Check') {
             steps {
                 script {
